@@ -3,7 +3,7 @@
 ## Overview
 The Multi-tenant SaaS provides organizations with ready-to-use core software elements for successfully running SaaS applications in the cloud.
 
-Get a boost with tenant onboarding, domain driven software components, integration testing, analytics dashboards, and more. This environment reduces development and experimentation time, allowing you to get your software into the hands of customers faster.
+Get a boost with tenant onboarding, domain-driven software best practices, integration testing, analytics dashboards, and more. This environment reduces development and deployment time.
 
 ## Repo Rundown
 
