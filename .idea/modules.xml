@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Multi-Tenant-SaaS.iml" filepath="$PROJECT_DIR$/.idea/Multi-Tenant-SaaS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WebStarter/WebStarter.iml" filepath="$PROJECT_DIR$/WebStarter/WebStarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-starter/web-starter.iml" filepath="$PROJECT_DIR$/web-starter/web-starter.iml" />
     </modules>
   </component>
 </project>
