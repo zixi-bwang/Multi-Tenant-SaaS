@@ -18,53 +18,45 @@ echo "Start Multi-Tenant SaaS Installation"
 
 CURRENT_DIR=$(pwd)
 
-# Check for installer dir
-if [ ! -d "${CURRENT_DIR}/installer" ];
+# Check for install directory
+if [ ! -d "${CURRENT_DIR}/install" ];
 then
- echo "Directory ${CURRENT_DIR}/installer not found"
- exit 2
+ echo "Directory ${CURRENT_DIR}/install folder not found"
+#  exit 2
 fi
 
-# Check for client/web dir
-if [ ! -d "${CURRENT_DIR}/client/web" ];
+# Check for client directory
+if [ ! -d "${CURRENT_DIR}/webstarter" ];
 then
- echo "Directory ${CURRENT_DIR}/client/web not found"
- exit 2
+ echo "Directory ${CURRENT_DIR}/webstarter not found"
+#  exit 2
 fi
 
 # check for java
 if ! command -v java >/dev/null 2>&1;
 then
-  echo "java version 11 or higher must be installed"
-  exit 2
+  echo "java version 11 or higher required"
+  # exit 2
 fi
 
 # check for maven
 if ! command -v mvn >/dev/null 2>&1;
 then
-  echo "maven must be installed"
-  exit 2
+  echo "maven must be installed first"
+  # exit 2
 fi
 
-cd ${CURRENT_DIR}/installer
-echo "Build installer jar with maven"
+cd ${CURRENT_DIR}/install
+echo "Build install jar with maven"
 if ! mvn > /dev/null 2>&1 ;
 then
-  echo "Error with build of Java installer for SaaS Boost"
-  exit 2
-fi
-
-cd ${CURRENT_DIR}/client/web
-echo "Download dependencies for React Web App"
-yarn
-if [ $? -ne 0 ]; then
-  echo "Error with yarn build of dependencies for React Web App. Check node version per documentation"
-  exit 2
+  echo "Error when building Java installation"
+  # exit 2
 fi
 
 cd ${CURRENT_DIR}
 clear
-echo "Launch Java Installer for SaaS Boost"
+echo "Launch for Multi-Tenant SaaS"
 
 
-java -Djava.util.logging.config.file=logging.properties -jar ${CURRENT_DIR}/installer/target/SaaSBoostInstall-1.0.0-shaded.jar
+java -Djava.util.logging.config.file=logging.properties -jar ${CURRENT_DIR}/install/target/MultiTenantSaaSInstall-1.0.0-shaded.jar
